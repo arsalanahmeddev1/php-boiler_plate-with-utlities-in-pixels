@@ -1,27 +1,41 @@
+<?php 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+$domain_name = "example";
+$phone_number = "0123456789";
+$email_address = "info@example.com";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diligenttek</title>
-    <!-- font awesome  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- aos  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- owl slider  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <!-- css -->
-    <link rel="stylesheet" href="./assets/libs/libs.css">
-    <link rel="stylesheet" href="./assets/css/utilities.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>
+        <?php
+            if (!isset($pageTitle)) {
+                $pageTitle = "designfoxy";
+            }
+            echo htmlspecialchars($pageTitle); ?></title>
+    <link rel="shortcut icon" href="./assets/images/fav.webp" type="image/x-icon">
+    <meta name="description"
+    content="Top Leading Digital Design Agency in Asutin Texas USA. Our mission is help brands to be relevant in the ecosystem digital through creativity, Digiatl media. Further Contact us now">
+    <meta name="keywords" content="<?php echo $domain_name; ?>, software development, mobile app development, website development, custom software solutions, mobile development, web development, enterprise software, iOS app development, Android app development, digital product development, SaaS development, full-stack development, web application development, cross-platform mobile development, software engineering, innovative software solutions, technology consulting, custom web design, mobile solutions, software house, tech-driven solutions, <?php echo $domain_name; ?> software house">
+    <meta property="og:locale" content="en_GB">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="<?= $domain_name ?>">
+  <meta property="og:site_name" content="<?= $domain_name ?>">
+  <meta property="og:url" content="<?php echo 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
+  <meta property="og:site_name" content="<?= $domain_name; ?>">
+  <meta property="og:image" content="./images/favicon.png" />
+  <meta property="og:description" content="<?= $pageTitle; ?>">
+  <meta property="og:locale" content="en">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:label1" content="Estimated reading time">
+  <meta name="twitter:data1" content="1 minute">
+  <meta charset="UTF-8">
 </head>
 
 <body class="position-relative">
